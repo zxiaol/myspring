@@ -14,9 +14,30 @@ public class MainApp {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        HelloWorld hello = (HelloWorld) context.getBean("HelloWorld");
+        HelloWorld helloSingleton = (HelloWorld) context.getBean("HelloWorldSingleton");
 
-        hello.getMessage();
+        helloSingleton.getMessage();
+
+        helloSingleton.setMessage("i am super man!");
+
+        helloSingleton.getMessage();
+
+        HelloWorld helloSingleton1 = (HelloWorld) context.getBean("HelloWorldSingleton");
+
+        helloSingleton1.getMessage();
+
+        /*--------prototype-----*/
+        HelloWorld helloWorldPrototype = (HelloWorld) context.getBean("HelloWorldPrototype");
+
+        helloWorldPrototype.getMessage();
+
+        helloWorldPrototype.setMessage("i am new prototype!");
+
+        helloWorldPrototype.getMessage();
+
+        HelloWorld helloWorldPrototype1 = (HelloWorld) context.getBean("HelloWorldPrototype");
+
+        helloWorldPrototype1.getMessage();
 
     }
 }
