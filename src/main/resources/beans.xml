@@ -5,11 +5,11 @@
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id = "HelloWorldPrototype" class = "com.xiaomingyk.myspring.HelloWorld" scope="prototype">
+    <bean id = "HelloWorldPrototype" class = "com.xiaomingyk.myspring.HelloWorld" scope="prototype" init-method="initPrototype" destroy-method="destroyPrototype">
         <property name = "message" value = "Hello World! friends!"/>
     </bean>
 
-    <bean id = "HelloWorldSingleton" class = "com.xiaomingyk.myspring.HelloWorld" scope="singleton">
+    <bean id = "HelloWorldSingleton" class = "com.xiaomingyk.myspring.HelloWorld" scope="singleton" init-method="initSingleton" destroy-method="destroySingleton">
         <property name = "message" value = "Hello World! single!"/>
     </bean>
 

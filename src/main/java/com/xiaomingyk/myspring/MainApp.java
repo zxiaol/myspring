@@ -1,6 +1,6 @@
 package com.xiaomingyk.myspring;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -12,7 +12,7 @@ public class MainApp {
 
         System.out.println("starting ....");
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        AbstractApplicationContext  context = new ClassPathXmlApplicationContext("Beans.xml");
 
         HelloWorld helloSingleton = (HelloWorld) context.getBean("HelloWorldSingleton");
 
@@ -39,5 +39,6 @@ public class MainApp {
 
         helloWorldPrototype1.getMessage();
 
+        context.registerShutdownHook();
     }
 }
