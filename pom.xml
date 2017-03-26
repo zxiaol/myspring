@@ -5,7 +5,10 @@
   <groupId>com.1buyao.yueke</groupId>
   <artifactId>springtutorial</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <modules>
+    <module>twoinjectbeans</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>springtutorial</name>
   <url>http://maven.apache.org</url>
